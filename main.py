@@ -157,7 +157,6 @@ team6List = [
 def main():
     random.seed(datetime.now())
     i = 1
-    team5win = []
     while i < 5000:
         team1 = Team(1, team1List)
         team2 = Team(2, team2List)
@@ -168,8 +167,7 @@ def main():
 
         teams = [team1, team2, team3, team4, team5, team6]
 
-        oneWin = tornament(teams)
-        team5win.append(oneWin)
+        tornament(teams)
         i += 1
 
 
@@ -200,7 +198,6 @@ def tornament(teams):
         teams[4].display()
         time.sleep(15)
         return
-
 
 
 def games(team1, team2):
