@@ -1,6 +1,6 @@
 # This is a Python script used to simulate badminton games
 # goal is to choose the best team lineup to maximize chance of winning the tournament
-
+import time
 from datetime import datetime
 import random
 
@@ -158,7 +158,7 @@ def main():
     random.seed(datetime.now())
     i = 1
     team5win = []
-    while i < 1000:
+    while i < 5000:
         team1 = Team(1, team1List)
         team2 = Team(2, team2List)
         team3 = Team(3, team3List)
@@ -197,7 +197,10 @@ def tornament(teams):
             j += 1
     print(winCount)
     if winCount[4] == max(winCount) and max(winCount) >= 11:
-        return teams[4].display()
+        teams[4].display()
+        time.sleep(15)
+        return
+
 
 
 def games(team1, team2):
